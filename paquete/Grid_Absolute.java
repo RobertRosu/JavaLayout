@@ -14,9 +14,13 @@ public class Grid_Absolute {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Java Layout");
-		JPanel panel = new JPanel(new FlowLayout());
+		JPanel panel1 = new JPanel(new FlowLayout());
+		JPanel panel2 = new JPanel(new FlowLayout());
+		JPanel panel3 = new JPanel(new FlowLayout());
+		
 		JMenuBar menuBar = new JMenuBar();
 		JMenu menu = new JMenu("Opciones");
+		
 		
 		JMenuItem item1 = new JMenuItem("Absolute - Grid");
 		JMenuItem item2 = new JMenuItem("Flow - Box");
@@ -50,7 +54,7 @@ public class Grid_Absolute {
 		menuBar.add(menu);
 		
 		frame.setJMenuBar(menuBar);
-		frame.setContentPane(panel);
+		frame.setContentPane(panel1);
 		frame.setBounds(150, 150, 600, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
