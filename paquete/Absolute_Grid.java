@@ -1,5 +1,8 @@
 package paquete;
 
+import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -37,13 +40,43 @@ public class Absolute_Grid {
 		JPanel tabContainer2 = new JPanel(new GridLayout(2, 1));
 		JPanel tabContainer3 = new JPanel(new GridLayout(2, 1));
 		
+		JPanel Gridbagpanel = new JPanel();
+	     Gridbagpanel.setLayout(new GridBagLayout());
+	     GridBagConstraints container = new GridBagConstraints();
+	     JButton gridbag1 = new JButton("gridbag");
+		 // Especificamos las coordenadas de posicionamiento que va a tener el boton (gridx/gridy)
+	     container.gridx=2;
+	     container.gridy=2;
+		 // Especificamos la anchura y la altura (gridwidth/gridheight)
+	     container.gridwidth=100;
+	     container.gridheight=100;
+		 // Insertamos el boton al JPanel junto con las propiedades del boton
+	     Gridbagpanel.add(gridbag1, container);
+	   
+	     // Panel de BorderLayout
+	     JPanel Borderpanel = new JPanel(new BorderLayout());
+		 // Creamos los botones
+	     JButton border1 = new JButton("border north");
+	     JButton border2 = new JButton("border east");
+	     JButton border3= new JButton("border center");
+	     JButton border4 = new JButton("border west");
+	     JButton border5 = new JButton("border south");
+		 // Insertamos los botones al JPanel, en el segundo parametro especificamos hacia que direccion queremos enviar el elemento
+	     Borderpanel.add(border1, BorderLayout.NORTH);
+	     Borderpanel.add(border2, BorderLayout.EAST);
+	     Borderpanel.add(border3, BorderLayout.CENTER);
+	     Borderpanel.add(border4, BorderLayout.WEST);
+	     Borderpanel.add(border5, BorderLayout.SOUTH);
+		
 		// Agregamos los dos paneles dentro del panel contenedor
 		tabContainer2.add(AbsolutePanel);
 		tabContainer2.add(GridPanel);
+		tabContainer3.add(Borderpanel);
+		tabContainer3.add(Gridbagpanel);
 		// Creamos un tab, agregando el contenedor como segundo parametro
 		tabPane.addTab("PABLO (1)", tabContainer1);
 		tabPane.addTab("Absolute - Grid", tabContainer2);
-		tabPane.addTab("AIMAR (3)", tabContainer3);
+		tabPane.addTab("Border - Gridbag", tabContainer3);
 		// Agregamos el Taboane al frame
 		frame.setContentPane(tabPane);
 		frame.setSize( 600, 600);
