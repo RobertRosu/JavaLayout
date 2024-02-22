@@ -42,16 +42,23 @@ public class Absolute_Grid {
 		
 		JPanel Gridbagpanel = new JPanel();
 	     Gridbagpanel.setLayout(new GridBagLayout());
-	     GridBagConstraints container = new GridBagConstraints();
-	     JButton gridbag1 = new JButton("gridbag");
+	     GridBagConstraints container1 = new GridBagConstraints();
+	     GridBagConstraints container2 = new GridBagConstraints();
+	     JButton Gridbag1 = new JButton("Gridbag 1");
+	     JButton Gridbag2 = new JButton("Gridbag 2");
 		 // Especificamos las coordenadas de posicionamiento que va a tener el boton (gridx/gridy)
-	     container.gridx=2;
-	     container.gridy=2;
+	     container1.gridx= 2;
+	     container1.gridy= 2;
 		 // Especificamos la anchura y la altura (gridwidth/gridheight)
-	     container.gridwidth=100;
-	     container.gridheight=100;
+	     container1.gridwidth=100;
+	     container1.gridheight=100;
 		 // Insertamos el boton al JPanel junto con las propiedades del boton
-	     Gridbagpanel.add(gridbag1, container);
+	     Gridbagpanel.add(Gridbag1, container1);
+	     
+	     container1.gridx= 1;
+	     container1.gridy= 0;
+	     
+	     Gridbagpanel.add(Gridbag2, container2);
 	   
 	     // Panel de BorderLayout
 	     JPanel Borderpanel = new JPanel(new BorderLayout());
