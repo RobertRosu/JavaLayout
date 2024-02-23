@@ -16,9 +16,9 @@ import javax.swing.border.EmptyBorder;
 
 public class Absolute_Grid {
 	public static void main(String[] args) {
-		// Definimps el frame
+		// Definimos el frame
 		JFrame frame = new JFrame("Java Layout");
-		// Panel para GridLayout
+		// Panel GridLayout
 		JPanel GridPanel = new JPanel(new GridLayout(3, 3));
 		// Un bucle for para insertar 9 botones en el GridPanel
 		for (int i = 1; i <= 9; i++) {
@@ -33,7 +33,7 @@ public class Absolute_Grid {
 		// Les ponemos una posicion absoluta (eje x, eje y, anchura, altura)
 		absolute1.setBounds(50, 50, 100, 30);
 		absolute2.setBounds(400, 100, 120, 60);
-
+		// Los agregamos al panel
 		AbsolutePanel.add(absolute1);
 		AbsolutePanel.add(absolute2);
 		// Creamos un objeto JTabbedPane
@@ -46,10 +46,14 @@ public class Absolute_Grid {
 		JPanel tabContainer2 = new JPanel(new GridLayout(2, 1));
 		JPanel tabContainer3 = new JPanel(new GridLayout(2, 1));
 
-		JPanel Gridbagpanel = new JPanel();
-		Gridbagpanel.setLayout(new GridBagLayout());
+		// GridBagLayout es lo mismo que GridLayout, pero este tiene mas opciones de personalizacion
+		// es por eso que tabien es un layout complicado de manejar
+		JPanel Gridbagpanel = new JPanel(new GridBagLayout());
+		
+		// Definimos dos GridBagConstraints, uno para cada boton
 		GridBagConstraints container1 = new GridBagConstraints();
 		GridBagConstraints container2 = new GridBagConstraints();
+		// Creamos los botones
 		JButton Gridbag1 = new JButton("Gridbag 1");
 		JButton Gridbag2 = new JButton("Gridbag 2");
 		// Especificamos las coordenadas de posicionamiento que va a tener el boton
